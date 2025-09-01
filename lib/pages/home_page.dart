@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/../widgets/bottom_nav.dart';
+import 'vegitables_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,11 +10,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    HomePage(),
+    VegitablesPage(),
+    FruitPage(),
+    CartPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Home Page')),
-      body: Center(child: Text('Welcome to the Home Page!')),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNav(),
     );
   }

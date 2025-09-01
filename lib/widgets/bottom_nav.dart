@@ -3,8 +3,10 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNav extends StatelessWidget {
-  const BottomNav({super.key});
-
+  const BottomNav({super.key, required this.selectedIndex, required this.onTabChange});
+    final int selectedIndex;
+    final Function(int)? onTabChange;
+    
   @override
   Widget build(BuildContext context) {
     return GNav(
@@ -20,6 +22,8 @@ class BottomNav extends StatelessWidget {
         GButton(icon: FontAwesomeIcons.lemon, text: 'Fruits'),
         GButton(icon: FontAwesomeIcons.cartShopping, text: 'Cart'),
       ],
+       selectedIndex: selectedIndex,
+       onTabChange:onTabChange,
     );
   }
 }

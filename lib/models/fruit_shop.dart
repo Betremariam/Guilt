@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'fruit.dart';
 
-class FruitShop {
+class FruitShop extends ChangeNotifier {
   final List<Fruit> _fruitshop = [
     Fruit(name: "Ananas", price: "50", imagePath: "Images/Ananas.jpg"),
     Fruit(name: "Banana", price: "40", imagePath: "Images/Banana.jpg"),
@@ -15,9 +16,11 @@ class FruitShop {
 
   void addToCart(Fruit fruit) {
     _cart.add(fruit);
+    notifyListeners();
   }
 
   void removeFromCart(Fruit fruit) {
     _cart.remove(fruit);
+    notifyListeners();
   }
 }

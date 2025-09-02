@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/../widgets/bottom_nav.dart';
+import 'fruit_page.dart';
 import 'vegitables_page.dart';
 
 class HomePage extends StatefulWidget {

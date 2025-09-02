@@ -14,16 +14,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    HomePage(),
-    VegitablesPage(),
-    FruitPage(),
-    CartPage(),
-  ];
+  final List<Widget> _pages = [VegitablesPage(), FruitPage(), CartPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Page')),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNav(
         selectedIndex: _selectedIndex,

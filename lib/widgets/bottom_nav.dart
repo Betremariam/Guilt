@@ -3,10 +3,14 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNav extends StatelessWidget {
-  const BottomNav({super.key, required this.selectedIndex, required this.onTabChange});
-    final int selectedIndex;
-    final Function(int)? onTabChange;
-    
+  const BottomNav({
+    super.key,
+    required this.selectedIndex,
+    required this.onTabChange,
+  });
+  final int selectedIndex;
+  final Function(int)? onTabChange;
+
   @override
   Widget build(BuildContext context) {
     return GNav(
@@ -17,13 +21,12 @@ class BottomNav extends StatelessWidget {
       activeColor: Colors.blue,
       tabBackgroundColor: Colors.blue.withOpacity(0.1),
       tabs: const [
-        GButton(icon: Icons.home, text: 'Home'),
         GButton(icon: FontAwesomeIcons.carrot, text: 'Vegetables'),
         GButton(icon: FontAwesomeIcons.lemon, text: 'Fruits'),
         GButton(icon: FontAwesomeIcons.cartShopping, text: 'Cart'),
       ],
-       selectedIndex: selectedIndex,
-       onTabChange:onTabChange,
+      selectedIndex: selectedIndex,
+      onTabChange: onTabChange,
     );
   }
 }

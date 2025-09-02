@@ -21,8 +21,8 @@ class FruitPage extends StatelessWidget {
             child: ListTile(
               leading: Image.asset(
                 fruit.imagePath,
-                width: 15,
-                height: 20,
+                width: 50,
+                height: 50,
                 fit: BoxFit.cover,
                 errorBuilder:
                     (context, error, stackTrace) => Text("image donot found"),

@@ -13,6 +13,7 @@ class CartPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Cart')),
       body: ListView.builder(
+        itemCount: cartList.length,
         itemBuilder: (context, index) {
           final carts = cartList[index];
           return Card(

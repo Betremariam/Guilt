@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/../widgets/bottom_nav.dart';
+import 'cart_page.dart';
 import 'fruit_page.dart';
 import 'vegitables_page.dart';
 
@@ -24,7 +25,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: const Text('Home Page')),
       body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: BottomNav(
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
     );
   }
 }

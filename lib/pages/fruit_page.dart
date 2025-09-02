@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/../models/fruit_shop.dart';
 import 'package:provider/provider.dart';
+import '/../provider/cart_provider.dart';
 
 class FruitPage extends StatelessWidget {
   FruitPage({super.key});
@@ -28,11 +29,11 @@ class FruitPage extends StatelessWidget {
               ),
               title: Text(fruit.name),
               subtitle: Text('price:${fruit.price}'),
-              trailing: Consumer<FruitShop>(
+              trailing: Consumer<CartProvider>(
                 builder: (context, cart, child) {
                   return IconButton(
                     onPressed: () {
-                      cart.addToCart(fruit);
+                      cart.addItem(fruit);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("${fruit.name} added to cart!")),
                       );

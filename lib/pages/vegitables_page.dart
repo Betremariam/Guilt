@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test11/provider/cart_provider.dart';
 import '../models/vegitable_shop.dart';
 
 class VegitablesPage extends StatelessWidget {
@@ -31,12 +32,12 @@ class VegitablesPage extends StatelessWidget {
               ),
               title: Text(veg.name),
               subtitle: Text('Price: ${veg.price}'),
-              trailing: Consumer<VegitableShop>(
+              trailing: Consumer<CartProvider>(
                 builder: (context, cart, child) {
                   return IconButton(
                     icon: const Icon(Icons.add_shopping_cart),
                     onPressed: () {
-                      cart.addToCart(veg);
+                      cart.addItem(veg);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('${veg.name} added to cart!')),
                       );

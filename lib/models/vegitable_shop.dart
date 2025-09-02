@@ -9,16 +9,5 @@ class VegitableShop extends ChangeNotifier {
     Vegitable(name: "Onion", price: "30", imagePath: "Images/Onion.jpg"),
     Vegitable(name: "Redroot", price: "30", imagePath: "Images/redroot.jpg"),
   ];
-  final List<Vegitable> _cart = [];
   List<Vegitable> get getVegitableList => _vegitableShop;
-  List<Vegitable> get getCartList => _cart;
-  void addToCart(Vegitable vegitable) {
-    _cart.add(vegitable);
-    notifyListeners();
-  }
-
-  void removeFromCart(Vegitable vegitable) {
-    _cart.remove(vegitable);
-    notifyListeners();
-  }
 }
